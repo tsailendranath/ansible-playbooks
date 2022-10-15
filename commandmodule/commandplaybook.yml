@@ -1,0 +1,13 @@
+---
+- name: commandplay
+  hosts: all
+  tasks:
+    - name: commandmodule
+      command: whoami
+      register: cuser
+    - name: printuser
+      debug: 
+        msg: "{{cuser}}"
+
+
+

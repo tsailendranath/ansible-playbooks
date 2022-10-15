@@ -1,0 +1,10 @@
+---
+all:
+  hosts:
+  children:
+    java:
+      hosts: 
+        192.168.0.5
+    db:
+      hosts:
+        192.168.0.6

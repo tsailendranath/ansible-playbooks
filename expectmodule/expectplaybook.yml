@@ -1,0 +1,16 @@
+---
+- name: expect play
+  hosts: all
+  tasks: 
+    - name: expect to add numbers
+      expect:
+        command: ./addnumbers.sh
+        chdir: ~
+        echo: true
+        responses:
+          "enter a: ": 20
+          "enter b: ": 10
+      register: output
+    - name: print
+      debug:
+        msg: "{{output}}"

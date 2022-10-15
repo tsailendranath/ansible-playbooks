@@ -1,0 +1,29 @@
+---
+- name: condition on register variable play
+  hosts: all
+  vars:
+    middle: middleware
+    tomcat_url: 'https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.0.23.tar.gz'
+  tasks:
+    - name: create middleware directory
+      file: 
+        path: "~/{{middle}}"
+        state: directory
+    - name: fined if there is tomcat
+      find:
+        paths: "~/{{middle}}"
+        patterns: "apache-tomcat-*"
+        recurse: no
+        use_regex: yes
+      register: status
+    - name: print status # for testing if it works
+      debug: 
+        msg: "{{status}}"
+    - name: download tomcat
+      get_url: 
+        url:  "{{tomcat_url}}"
+        dest: "/home/vagrant/{{middle}}"
+        mode: 0755
+      when: status.matched | float == 0
+        
+...

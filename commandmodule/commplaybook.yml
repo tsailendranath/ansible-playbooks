@@ -1,0 +1,38 @@
+---
+- name: comm playbook
+  hosts: java
+  tasks:
+    #- name: changing directory
+    # command: ls -la
+    # args:
+    #   chdir: /vagrant
+    # register: lsfiles
+    #- name: print
+    # debug:
+    #   msg: "{{lsfiles}}"
+    # - name: skip execution
+    #  command: touch filea
+    #  args:
+    #    creates: filea
+    #  - name: shellmodule
+    #    shell: ls
+    #    args:
+    #      chdir: /etc
+    #    register: lsfile
+    #  - name: print
+    #    debug:
+    #      msg: "{{lsfile}}"
+    # - name: create file
+    #   shell: touch fileb
+    #   args:
+    #     creates: ~/fileb
+
+
+
+
+
+
+
+
+
+
