@@ -1,0 +1,9 @@
+- name: playbook variables
+  hosts: java
+  vars:
+    tomcat_port: 8082
+    jdk_version: 14
+  tasks:
+    - name: print local variables
+      debug:
+        msg: "tomcat port: {{tomcat_port}} and jdk version is {{jdk_version}}"

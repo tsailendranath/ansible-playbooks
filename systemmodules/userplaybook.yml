@@ -1,0 +1,31 @@
+- name: userplaybook
+  hosts: ab
+  tasks:
+    # - name: user task
+    #   user:
+    #     name: abcuser
+    #     uid: 4848
+    #     state: absent
+    #     #groupid: 4343
+    #     shell: /bin/bash
+    #   become: yes
+    # - name: task 2
+    #   user:
+    #     name: auser
+    #     create_home: yes
+    #     password: 'welcome1'
+    #     generate_ssh_key: true
+    #   become: yes
+    - name: create a user and make him sudoer
+      user:
+        name: user11
+        create_home: yes
+        password: $5$yh42xpZy/X5H8f6L$Pe/mHNdiwPhKdUkKrKIAlgdePwXNlBPZsXr96hc9S2.
+      become: yes
+    - name: make him sudoer
+      lineinfile:
+        path: /etc/sudoers
+        insertafter: '^root.*'
+        line: 'user11 ALL=(ALL) NOPASSWD:ALL' 
+        validate: '/usr/sbin/visudo -csf %s'
+      become: yes

@@ -1,0 +1,20 @@
+---
+all:
+  #vars:
+    #ansible_become: true
+  hosts:
+  children:
+    java:
+      hosts:
+        192.168.0.5
+      vars:
+        ansible_become: true
+    db:
+      hosts:
+        mysql:
+          ansible_host: 192.168.0.6
+          ansible_become: yes
+        
+
+
+...

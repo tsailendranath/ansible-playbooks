@@ -1,0 +1,9 @@
+---
+ - name: debugplay
+   hosts: all
+   tasks:
+     - name: debug
+       debug:
+         msg: hello world
+     - name: ping
+       ping:      

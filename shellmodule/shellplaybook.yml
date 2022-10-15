@@ -1,0 +1,15 @@
+---
+- name: shellplay
+  hosts: all
+  tasks:
+    # - name: shell with command
+    #   shell: ls -la /etc | wc -l
+    #   register: count
+    # - name: print
+    #   debug:
+    #     msg: "{{count}}"
+    - name: shell with removes(if files exist then only execute)
+      shell: rm filea
+      args:
+        removes: filea
+      

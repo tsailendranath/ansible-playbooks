@@ -1,0 +1,8 @@
+---
+- name: 
+  hosts: java
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install apache
+      action: apt name=apache2 state=present

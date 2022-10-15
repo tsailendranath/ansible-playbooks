@@ -1,0 +1,16 @@
+- name: os name
+  hosts: db
+  gather_facts: no
+  tasks:
+  - name: osname
+    shell: uname -a
+    register: os_name
+  - name: print os name
+    debug:
+      msg: "{{os_name.stdout}}"
+  - name: gather facts and print
+    gather_facts:
+    register: gf
+  - name: print
+    debug:
+      msg: "{{gf}}"

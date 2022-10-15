@@ -1,0 +1,17 @@
+all:
+  hosts:
+    192.168.0.5:
+      ansible_port: 22
+      ansible_private_key_file: ~/.ssh/ansible
+      mysql_dbname: rconnect
+      mysql_login_user: root
+      mysql_login_password: welcome1
+  children:
+    javaserver:
+      hosts:
+        192.168.0.6
+      vars:
+        asible_port: 22
+        mysql_dbname: fithealth
+        mysql_login_user: fithealthuser
+        mysql_login_password: fithealth@1

@@ -1,0 +1,10 @@
+- name: extravars
+  hosts: all
+  tasks: 
+    - name: create file
+      file:
+        name: "{{filename}}"
+        owner: "{{owner}}"
+        group: "{{group}}"
+        mode: "{{mode}}"
+        state: touch

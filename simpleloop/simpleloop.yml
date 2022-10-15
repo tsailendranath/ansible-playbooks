@@ -1,0 +1,13 @@
+- name: simple loop
+  hosts: all
+  tasks:
+    - name: install all packages
+      apt:
+        name: "{{item}}"
+        update_cache: yes
+        state: present
+      become: yes
+      loop:
+        - tree
+        - vim
+        - net-tools

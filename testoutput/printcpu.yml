@@ -1,0 +1,16 @@
+- name: print cpu
+  hosts: java
+  tasks: 
+  # - name: cpu
+  #   debug:
+  #     msg: "{{ansible_processor_cores}}"
+  # - name: ram
+  #   debug:
+  #     msg: "{{ansible_memory_mb.real.total}}"
+  - name: check memory
+    shell: "df /dev/sda1 | tail -1 | awk '{print $4}'"
+    register: mem
+    failed_when: "mem.stdout | float > 4124600"
+  - name: ab  
+    debug:
+      msg: "{{mem.stdout}}"

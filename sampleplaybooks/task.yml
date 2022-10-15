@@ -1,0 +1,5 @@
+---
+-name: sampleplaybook
+ host: all
+ user: vagrant
+ become: yes

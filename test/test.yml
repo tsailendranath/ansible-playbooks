@@ -1,0 +1,7 @@
+- name: test
+  hosts: all
+  tasks:
+    
+    - name: print
+      debug:
+        msg: "{{ansible_memory_mb.real.total}}"

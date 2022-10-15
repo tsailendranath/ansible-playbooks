@@ -1,0 +1,6 @@
+
+splunk_server ansible_host=192.168.0.5 
+[pythom]
+192.168.0.6
+[pythom:vars]
+ansible_become=true

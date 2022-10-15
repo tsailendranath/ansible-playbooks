@@ -1,0 +1,14 @@
+- name: create file
+  hosts: java
+  vars:
+    owner: vagrant
+    group: vagrant 
+    perm: 0400
+  tasks:
+    - name: create file
+      file:
+         name: "{{filename}}"
+         owner: "{{owner}}"
+         group: "{{group}}"
+         mode: "{{perm}}"
+         state: "{{state}}"
