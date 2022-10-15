@@ -1,0 +1,5 @@
+- name: tomcat role playbook
+  hosts: all
+  roles:
+    - tomcat9
+    

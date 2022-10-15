@@ -1,0 +1,58 @@
+---
+- name: copyplay
+  hosts: group1
+  tasks:
+  #  - name: copy
+  #    copy:
+  #      src: filehost.yml
+  #      dest: /home/vagrant
+  #      owner: vagrant
+  #      group: vagrant
+  #      mode: 0600
+    # - name: remote copy
+    #   copy:
+    #     src: /home/vagrant/file1
+    #     dest: /vagrant
+    #     remote_src: true
+      # - name: copy file by checking
+      #   copy:
+      #     src: sudoers.1
+      #     dest: /home/vagrant
+      #     validate: "/usr/sbin/visudo -csf %s"
+
+      # - name: create file
+      #   file:
+      #     path: /home/vagrant/test-dir/filea
+      #     state: touch  
+      #     mode: 0600
+      #     modification_time: preserve
+      #     access_time: preserve
+                  # - name: create directory
+                  #   file:
+                  #     path: ~/dir1
+                  #     state: directory      
+                  # - name: move filea to dir1
+                  #   copy:
+                  #     src: ~/test-dir/filea
+                  #     dest: ~/dir1
+                  #     remote_src: true
+    #  - name: create symling
+    #    file:
+    #      src: ~/test-dir/filea
+    #      dest: ~/test-link
+    #      state: link
+      #  - name: line in file module
+      #    lineinfile:
+      #      path: ~/fileb
+      #      regexp: '^vagrant.*'
+      #      line: 'sailendranath  ALL=(ALL:ALL) ALL'
+      # - name: file in line module
+      #   lineinfile:
+      #       path: ~/fileb
+      #       insertafter: '^Password.*'
+      #       line: 'what is your name?'
+      
+
+
+            
+...

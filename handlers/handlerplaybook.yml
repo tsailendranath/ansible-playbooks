@@ -1,0 +1,22 @@
+- name: handler playbook
+  hosts: all
+  tasks: 
+  - name: user
+    shell: "whoami"
+    register: user
+    notify: 
+      - showuser
+  
+  - name: ip
+    shell: "hostname -I"
+    register: ip
+    notify:
+      - showip
+  handlers:
+    - name: showuser
+      debug:
+        msg: lgged in user is "{{user.stdout_lines}}"
+    - name: showip
+      debug:
+        msg: ip is "{{ip.stdout_lines}}"
+        

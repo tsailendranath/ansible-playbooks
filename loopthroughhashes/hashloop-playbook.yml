@@ -1,0 +1,12 @@
+- name: loop through hashes
+  hosts: all
+  tasks: 
+    - name: create file with permissions
+      file:
+        path: "{{item.filepath}}"
+        mode: "{{item.mode}}"
+        state: touch
+      loop:
+        - {filepath: "~/ledger-book.txt", mode: "0640"}
+        - {filepath: "~/daily-cashbook.txt", mode: "0600"}
+        - {filepath: "~/tally.txt", mode: "0544"}

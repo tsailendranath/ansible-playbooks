@@ -1,0 +1,21 @@
+---
+- name: mysql playbook
+  hosts: all
+  vars_files: 
+    - mysqlvars.yml
+  tasks: 
+    - name: create mysql user
+      mysql_user:
+        name: "{{name}}"
+        password: "{{password}}"
+        state: present
+        priv: "{{perm}}"
+        login_user: "{{rootname}}"
+        login_password: "{{rootpass}}"
+    - name: create database
+      mysql_db: 
+        name: "{{dbname}}"
+        state: present
+        login_user: "{{name}}"
+        login_password: "{{password}}"
+...

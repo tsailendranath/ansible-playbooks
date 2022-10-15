@@ -1,0 +1,15 @@
+- name: loop over dictionary
+  hosts: all
+  vars:
+    stories:
+      story1: birbal
+      story2: akbar
+      story3: tenali
+      story4: raman
+      story5: bikram
+      story6: betal
+  tasks:
+    - name: print 
+      debug:
+        msg: story no is "{{item.key}}" and story name is "{{item.value}}"
+      loop: "{{stories | dict2items}}"  

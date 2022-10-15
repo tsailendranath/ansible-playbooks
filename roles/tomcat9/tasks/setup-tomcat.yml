@@ -1,0 +1,26 @@
+- name: download tomcat
+  get_url:
+    url: "{{tomcat_download_url}}"
+    dest: "/tmp/{{tomcat_dir}}.tar.gz"
+    owner: "{{tomcat_os_user}}"
+    mode: '0755'
+  become: yes
+  
+- name: untar tomcat
+  unarchive:
+    src: "/tmp/{{tomcat_dir}}.tar.gz"
+    dest: "/tmp/"
+    remote_src: yes
+  become: yes
+- name: copy
+  copy:
+    src: "/tmp/apache-tomcat-9.0.67"
+    dest: "{{tomcat_install_dir}}/{{tomcat_dir}}"
+    owner: "{{tomcat_os_user}}"
+    group: "{{tomcat_os_user}}"
+    remote_src: yes
+    mode: '0755'
+  become: yes
+  
+  
+  

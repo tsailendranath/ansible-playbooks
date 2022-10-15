@@ -1,0 +1,9 @@
+- name: package module
+  hosts: a 
+  tasks: 
+    - name: package
+      package: 
+        name: tree
+        state: absent
+        use: auto
+      become: yes

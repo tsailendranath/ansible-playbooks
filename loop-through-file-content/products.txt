@@ -1,0 +1,10 @@
+medal
+comb
+shoes
+chappals
+dress
+bags
+backpack
+glasses
+subglasses
+redshoes

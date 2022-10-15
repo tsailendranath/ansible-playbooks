@@ -1,0 +1,32 @@
+- name: package playbook
+  hosts: a
+  tasks:
+    # - name: sample install task
+    #   apt: 
+    #     name: tree
+    #     state: present
+    #     update_cache: yes
+    #   become: true
+    # - name: remove unwanted packages
+    #   apt: 
+    #     autoclean: yes
+    #   become: true
+    #- name: remove
+    # apt:
+    #   name: tree
+    #   state: absent
+    #   update_cache: yes
+    #   purge: yes
+    #   autoremove: yes
+    #   autoclean: yes
+    # become: true
+     - name: install requierd packages
+       apt:
+         name: 
+           - tree
+           - curl
+           - vim
+         state: latest
+         update_cache: yes
+       become: yes
+

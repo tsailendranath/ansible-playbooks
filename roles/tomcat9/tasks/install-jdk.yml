@@ -1,0 +1,9 @@
+- name: install java
+  apt:
+    name: "{{jdk_pkg}}"
+    state: present
+    update_cache: yes
+  become: yes
+- name: create java home variable
+  shell: readlink -f $(which java) | sed 's/bin.*//g'
+  register: java_home

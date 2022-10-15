@@ -1,0 +1,8 @@
+---
+# defaults file for tomcat9
+tomcat_download_url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.67/bin/apache-tomcat-9.0.67.tar.gz
+jdk_pkg: openjdk-11-jdk
+tomcat_install_dir: /u01/middleware
+tomcat_dir: tomcat9
+tomcat_os_user: tomcat
+tomcat_download_dir: apache-tomcat-9.0.67

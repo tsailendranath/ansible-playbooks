@@ -1,0 +1,16 @@
+- name: loop through file
+  hosts: all
+  tasks:
+    - name: copy file
+      copy:
+        src: products.txt
+        dest: ~/
+        mode: '0644'
+    - name: display
+      shell: cat ~/products.txt
+      register: view
+    - name: view
+      debug:
+        msg: "{{item}}"
+      loop: "{{view.stdout_lines}}"
+      when: item == 'chappals' # or item in 'chappals'

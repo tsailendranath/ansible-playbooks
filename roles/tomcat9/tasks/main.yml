@@ -1,0 +1,6 @@
+---
+# tasks file for tomcat9
+- import_tasks: install-jdk.yml
+- import_tasks: create-tomcat-user.yml
+- import_tasks: setup-tomcat.yml
+- import_tasks: create-tomcat-service.yml
